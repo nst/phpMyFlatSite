@@ -31,4 +31,7 @@ So I wrote mine in 2007. I was inspired by what I think is close to the perfect 
 - can't create pages online
 - can't upload files
 - can't post comments
- 
+
+#### Live Demo
+
+phpMyWebSite is running on [seriot.ch](http://www.seriot.ch).
