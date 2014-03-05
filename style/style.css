@@ -1,0 +1,339 @@
+/* adapted from www.exubero.com */
+
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: white;
+    /*background-color: #173150;*/
+    background-color: grey;
+    text-align: center;
+}
+
+.left {
+	float: left;
+	padding: 1em;
+	/*
+	padding-top: 1em;
+	padding-bottom: 1em;
+	*/
+}
+
+.right {
+	float: right;
+	padding: 1em;
+	/*
+	padding-top: 1em;
+	padding-bottom: 1em;
+	*/
+}
+
+.text_left {
+	float: left;
+}
+
+.text_right {
+	float: right;
+}
+
+a img {
+    border: none;
+}
+
+#wrap {
+    padding: 0;
+    margin: 0px auto;
+    width: 55em;
+    color: black;
+    background-color: white;
+    position: relative;
+    text-align: left;
+}
+
+#header {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 180px;
+    background: url(leman_swiss_flag.jpg) #6699cc no-repeat center top;
+    border-bottom: #404040 2px solid;
+}
+
+#header p {
+    padding: 0.25em;
+    margin: 0;
+}
+
+#site_name {
+    font-size: 250%;
+}
+
+#quotation {
+    /*font-weight: bold;*/
+    font-size: 80%;
+    float: right;
+    color: white;
+	text-align: right;
+	font-family: "Courier";
+}
+
+#quotation a {
+    text-decoration: none;
+    color: white;
+}
+
+#content {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    float: right;
+    width: 48em;
+	font-size:10pt;
+}
+
+/*
+#content h2, #content h3, #content h4, #content h5, #content h6 {
+    color: #404040;
+}
+*/
+
+#content h2 {
+    padding: 0.1em;
+    border: #173150 2px solid;
+	/*border-left: #3e7035 2px solid;*/
+    /*border-bottom: #3e7035 2px solid;*/
+    margin-bottom: 0;
+    font-variant: small-caps;
+    clear: both;
+}
+
+#content h3 {
+    border-bottom: #173150 2px solid;
+    margin-bottom: 0;
+}
+
+#content .date, #content .updated {
+    padding: 0.25em;
+    font-size: smaller;
+    float: right;
+    margin: 0.25em;
+    color: #3e7035;
+    font-style: italic;
+}
+
+#content .author {
+    font-size: small;
+    float: right;
+    color: #3e7035;
+    font-style: italic;
+}
+
+#content blockquote {
+    font-style: italic;
+}
+
+#content pre {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #eee;
+}
+
+#content code {
+    /*border: 1px solid black;*/
+    /*padding: 0.5em;*/
+    /*margin: 0.5em;*/
+    background-color: #eee;
+}
+
+#footer {
+    padding: 0.25em;
+    clear: both;
+    /*font-weight: bold;*/
+    font-size: smaller;
+    color: white;
+    /*font-style: italic;*/
+    background-color: #666;
+    text-align: center;
+}
+
+#footer a {
+    color: white;
+	text-decoration: none;
+}
+
+ul#nav {
+    width: 13em;
+    border-bottom: black 1px solid;
+}
+
+ul#nav, ul#nav ul {
+    padding: 0;
+    margin: 0px 0px 1em;
+    border-right: black 1px solid;
+    font-size: medium;
+    list-style-type: none;
+    background-color: #6699cc;
+}
+
+ul#nav ul {
+    font-size: small;
+    margin: 0;
+    border-style: none;
+    background-color: #99ccff;
+}
+
+ul#nav li {
+    padding: 0 0.25em;
+    font-size: larger;
+    margin: 0;
+    border-left: black 1px solid;
+    border-top: black 1px solid;
+}
+
+ul#nav li:hover, ul#nav li.navselected {
+    background-color: white;
+}
+
+ul#nav a {
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+ul#nav a:link, ul#nav a:visited {
+    color: black;
+}
+
+ul#nav a:hover {
+    color: #ff0000;
+}
+
+#sidebar {
+    padding: 0 1em;
+    margin: 0px;
+    width: 12em;
+}
+#sidebar h3, #sidebar h4, #sidebar h5, #sidebar p, #sidebar ul, #sidebar ol {
+    font-size: small;
+}
+
+#sidebar h3, #sidebar h4, #sidebar h5 {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+#sidebar ul {
+    padding: 0;
+    margin:0;
+    list-style-type: none
+}
+
+#sidebar li {
+    padding-left: 0.5em;
+}
+
+/* ---[ Entries ]----------------------------------- */
+
+#content dl.entries {
+    margin: 0;
+    padding: 0;
+}
+#content dl.entries dt {
+    font-size: 120%;
+    line-height: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 1em;
+}
+#content dl.entries dt a {
+    text-decoration: none;
+    color: #40659B;
+}
+#content dl.entries dt a:hover {
+    color: #036;
+    text-decoration: underline;
+}
+#content dl.entries dd {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+#content dl.entries dd .more {
+    font-size: 90%;
+}
+#content dl.entries dd.posted {
+    margin-bottom: 0.25em;
+    font-size: 90%;
+    color: #999;
+}
+#content dl.entries dd.permalink {
+    margin: 0;
+    font-size: 90%;
+    float: right;
+}
+#content dl.entries dd.permalink a {
+    color: #999;
+}
+#content dl.entries dd p {
+    margin: 1em 0 1em 0;
+}
+
+/* ---[ dl's inside entries ]----------------------------------- */
+
+#content dl.entries dl dt {
+    font-size: 100%;
+    line-height: 1em;
+    border-bottom: none;
+    padding-top: 0.5em;
+}
+
+#content dl.entries dl dd {
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+
+#content img.border {
+    display: block;
+    padding:5px;
+    background:#FFF;
+    border:1px solid;
+    border-color: #ccc #666 #666 #ccc
+}
+
+/* ---[ XML buttons ]----------------------------------- */
+/* Styles taken from http://www.jschreiber.com/archives/2004/09/creating_pure_c.html */
+
+.btn {
+    display: inline;
+    font: x-small/200% Arial, sans-serif;
+    padding: 1px 0;
+    border: 1px solid #666;
+    margin: 0;
+    text-decoration: none;
+    background-color: #fff;
+}
+.btnFront {
+    display: inline;
+    background-color: #f90;
+    color: #fff;
+    padding: 0 2px;
+    border: 1px solid #fff;
+    border-top: 0;
+    border-bottom: 0;
+    margin: 0px;
+}
+.btnText {
+    display: inline;
+    background-color: #898e79;
+    color: #fff;
+    padding: 0 2px;
+    border: 0;
+    border-right: 1px solid #fff;
+    margin: 0px;
+}
+
+

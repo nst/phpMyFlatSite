@@ -1,0 +1,9 @@
+Error
+
+### Error: page not found
+
+A "HTTP 404 error" occurred.
+
+It means the link you followed is either wrong or outdated.
+
+Please use the left menu to find what you want.
