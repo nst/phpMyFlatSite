@@ -35,3 +35,19 @@ So I wrote mine in 2007. I was inspired by what I think is close to the perfect 
 #### Live Demo
 
 phpMyWebSite is running on [seriot.ch](http://www.seriot.ch).
+
+#### Install
+
+Put the `mfs` folder in your web server.
+
+Point you web brower to `http://host/path_to_mfs/` and you're in.
+
+Hint: you can log in by clicking the copyright name. Use `admin`/`password`.
+
+You can change the default settings in `include/config.php`.
+
+If necessary, allow the PHP process owner to write and edit files:
+
+    $ chmod 777 blog
+    $ chmod 646 blog/*.markdown
+    $ chmod 646 texts/*.markdown
