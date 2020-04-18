@@ -7,6 +7,14 @@
     http://seriot.ch
 */
 
+/*
+if (PHP_MAJOR_VERSION >= 7) {
+    set_error_handler(function ($errno, $errstr) {
+       return strpos($errstr, 'Declaration of') === 0;
+    }, E_WARNING);
+}
+*/
+
 $GLOBALS['texts_folder'] = 'texts';
 $GLOBALS['blog_folder'] = 'blog';
 $GLOBALS['sidebar_folder'] = 'sidebar';
@@ -74,7 +82,7 @@ class TextItem {
         return evaluate_template_keys($d, $template);
     }
     
-    function update($title, $text) {
+    function updateTitleText($title, $text) {
         $this->title = stripslashes($title);
         $this->text = stripslashes($text);
         $this->save();
@@ -197,7 +205,7 @@ class BlogPost extends TextItem {
         return evaluate_template_keys($d, $template);
     }
     
-    function update($title, $date, $text) {
+    function updateTitleDateText($title, $date, $text) {
         $this->title = stripslashes($title);
         $this->date = stripslashes($date);
         $this->text = stripslashes($text);
@@ -264,7 +272,7 @@ function build_text_page($id, $sidebar=False) {
     $ti = new TextItem($id);
     
     if($_POST['title'] && $_POST['text']) {    
-        $ti->update($_POST['title'], $_POST['text']);
+        $ti->updateTitleText($_POST['title'], $_POST['text']);
         header("Location: ".current_file()."?edit=0");
     }
     
@@ -286,7 +294,7 @@ function build_create_blogpost_page($id, $sidebar=False) {
         $file_content = $_POST['title'].'\n'.$_POST['date'].'\n'.$_POST['text'];
         $file = create_unique_blog_file($_POST['file'], $file_content);
         $b = new BlogPost($file);
-        $b->update($_POST['title'], $_POST['date'], $_POST['text']);
+        $b->updateTitleDateText($_POST['title'], $_POST['date'], $_POST['text']);
         $b->save();
  	    header("Location: ".$b->permalink_url());
     }
@@ -334,7 +342,7 @@ function build_blog_page($id, $sidebar=False, $history=False) {
         }
         
         if($_POST['title'] && $_POST['date'] && $_POST['text']) {   
-            $b->update($_POST['title'], $_POST['date'], $_POST['text']);
+            $b->updateTitleDateText($_POST['title'], $_POST['date'], $_POST['text']);
             header("Location: ".current_file());
         }
         
@@ -439,11 +447,29 @@ class MenuItem {
 function build_menu() {
 	$menu = array(new MenuItem("Home","index.php"),
 	
-	              new MenuItem("Blog","blog.php"),
+	              /* new MenuItem("Blog","blog.php"), */
 	
-				  new MenuItem("Resources","resources.php"),
+				  /* new MenuItem("Software","software.php"), */
 
-				  new MenuItem("About","about.php",array(new MenuItem("Friends","about_friends.php"))),
+/*
+				  new MenuItem("Resources","resources.php",array(new MenuItem("Home Made Maps","maps.php"),
+				                                                 new MenuItem("Hello Mach-O","hello_macho.php"),
+				                                                 new MenuItem("Abusing Twitter API","abusing_twitter_api.php"),
+																 new MenuItem("Data Visualization","visualization.php"),
+																 new MenuItem("Talks and Papers","resources_talks_papers.php"))),
+*/
+
+				  new MenuItem("Home Made Maps","maps.php"),
+				  new MenuItem("Hello Mach-O","hello_macho.php"),
+				  new MenuItem("A Tiny NTP Client","ntp.php"),
+				  new MenuItem("Abusing Twitter API","abusing_twitter_api.php"),
+				  new MenuItem("Parsing JSON","parsing_json.php"),
+				  new MenuItem("Data Visualization","visualization.php"),
+
+				  new MenuItem("Trail","trail.php",array(new MenuItem("Trail du Salève","trail_saleve_2016.php"), new MenuItem("Eiger Ultra Trail","trail_e101_2018.php"), new MenuItem("X-Alpine","trail_xalpine_2019.php"))),
+
+				  new MenuItem("Talks and Papers","resources_talks_papers.php"),
+
 
 				  new MenuItem("Contact","contact.php"));
 
